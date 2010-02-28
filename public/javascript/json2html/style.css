@@ -4,7 +4,7 @@ body { min-height: 100%; font-family: Verdana, "Trebuchet MS", Helvicita, Arial,
 hr { border: none; height: 1px; background-color: #808080; }
 form { padding: 0px; margin: 0px; }
 
-.header { text-align: center; padding-top: 17px; height: 90px;
+.header { text-align: left; padding-top: 10px;  padding-left: 17px; height: 90px;
  background: url(images/top1.png) repeat-x; }
 .bodywrap { background-color: #000000; display: none; position: absolute; top: 0px; left: 0px; z-index: 99; }
 
