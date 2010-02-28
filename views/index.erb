@@ -52,18 +52,22 @@
       <p class="closep"><input type="button" onclick="hideHelp();" value="close" /></p>
    </div>
 
-   <form onsubmit="doParse(); return false;">
+   <form action="/" method="post">
       <div class="oz_quiz_notice">
         <p></p>
       </div>
       <p class="mast mast_first"></p></p>
       <p class="mast">
       </p>
-      <div id="inputcontainer"><textarea id="text" rows="12"><%= @results %>
-      </textarea></div>
+      <div id="inputcontainer">
+        <textarea name="values" id="text" rows="12"><%= @results %></textarea>
+      </div>
       <div class="clear"></div>
-      <div class="lfloat"><input type="submit" id="submit" value="json 2 html" onclick="doParse(); return false;" /> <input type="button" id="reset" value="reset" onclick="clearPage();" /></div>
-      <div class="rfloat"><input type="button" id="help" value="help" onclick="doHelp();" /></div>
+      <div class="lfloat">
+        <input type="submit" id="submit" value="Update"/> 
+      </div>
+      <div class="rfloat">
+        <input type="button" id="help" value="help" onclick="doHelp();" /></div>
       <div class="clear"></div>
       <hr />
       <a name="_output" class="noa"></a>

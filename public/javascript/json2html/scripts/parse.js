@@ -158,15 +158,15 @@ function parse(str)
    return parseValue(obj, null, null);
 }
 
+// function doParse()
+// {
+//    $("submit").value = "processing...";
+//    $("submit").disabled = "disabled";
+// 
+//    setTimeout(doParse2, 50);
+// }
+
 function doParse()
-{
-   $("submit").value = "processing...";
-   $("submit").disabled = "disabled";
-
-   setTimeout(doParse2, 50);
-}
-
-function doParse2()
 {
    var value = $("text").value;
    if(value.substr(0, 4) == "http" || value.substr(0, 4) == "file" || value.substr(0, 3) == "ftp")
@@ -183,10 +183,10 @@ function doParse2()
 
       doTooltips();
 
-      $("submit").value = "json 2 html";
+      // $("submit").value = "json 2 html";
       $("submit").disabled = null;
 
-      location.href = "#_output";
+      // location.href = "#_output";
    }
 }
 
@@ -213,7 +213,7 @@ function gotURL()
       $("submit").value = "json 2 html";
       $("submit").disabled = null;
 
-      location.href = "#_output";
+      // location.href = "#_output";
    }
 }
 

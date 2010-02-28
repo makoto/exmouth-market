@@ -9,25 +9,27 @@ Db = TokyoTyrant::DB.new('127.0.0.1', 1978)
    
  
 get '/' do
-  @results = JSON.generate(Db.mget(0..(Db.size - 1)))
+  @results = get_all
   p @results
   erb :index
 end
  
 post '/' do
-  
-  $WC.set(params[:key], params[:value], :post)
+  values = JSON.parse(params[:values])
+  Db.mput(values)
+  @results = get_all
+  erb :index
 end
  
-# put '/' do
-#   $WC.set(params[:key], params[:value], :put)
-# end
-#  
 # delete "/" do
 #   params[:key].nil? ? $WC.flush : $WC.delete(params[:key])
 # end
  
-get "/:key" do
-  @result = JSON.generate(Db.get(params[:key]))
-  erb :show
+# get "/:key" do
+#   @result = JSON.generate(Db.get(params[:key]))
+#   erb :show
+# end
+
+def get_all
+  JSON.generate(Db.mget(0..(Db.size - 1)))
 end
