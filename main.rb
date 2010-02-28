@@ -14,6 +14,11 @@ get '/' do
   erb :index
 end
  
+get '/stat' do
+  @results = Db.stat
+  erb :stat
+end
+ 
 post '/' do
   values = JSON.parse(params[:values])
   Db.mput(values)
