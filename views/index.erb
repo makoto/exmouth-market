@@ -62,11 +62,20 @@
       <div class="rfloat">
         <input type="button" id="help" value="help" onclick="doHelp();" /></div>
       <div class="clear"></div>
-      <hr />
-      <a name="_output" class="noa"></a>
-      <div id="stats" class="stats"></div>
-      <div id="output" class="output"></div>
    </form>
+   <hr />
+   <form method="post" action="/destroy">
+     <input name="key" value="specify_key" />
+     <div>
+       <input type="submit" id="submit" value="Destroy"/> 
+      </div>
+   </form>
+   <hr />
+   <a name="_output" class="noa"></a>
+   <div id="stats" class="stats"></div>
+   <div id="output" class="output"></div>
+   
+   
    <div class="footer">Layout and json parsing javascript are from <a href="http://github.com/bloopletech/json2html">json2html</a>.</div>
 </body>
 </html>

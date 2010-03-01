@@ -23,12 +23,15 @@ post '/' do
   values = JSON.parse(params[:values])
   Db.mput(values)
   @results = get_all
-  erb :index
+  redirect '/'
+  # erb :index
 end
  
-# delete "/" do
-#   params[:key].nil? ? $WC.flush : $WC.delete(params[:key])
-# end
+post "/destroy" do
+  Db.delete(params[:key])
+  @results = get_all
+  redirect '/'
+end
  
 # get "/:key" do
 #   @result = JSON.generate(Db.get(params[:key]))
