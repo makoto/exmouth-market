@@ -6,15 +6,16 @@ Simple Web UI for Tokyo Tyrant (NOT READY FOR RELEASE YET!!)
 ## What's currently supported?
 HDB mset/mget/delete/vanish/stat
 
-## Dependencies.
+## Dependencies (I checked on my OSX 10.6.2, Ruby 1.8.7, and Ruby Gem 1.3.5).
 
-- [Tokyo Cabinet](http://1978th.net/tokyocabinet/)
-- [Tokyo Tyrant](http://1978th.net/tokyotyrant/)
+- [Tokyo Cabinet](http://1978th.net/tokyocabinet/) 1.4.42 >
+- [Tokyo Tyrant](http://1978th.net/tokyotyrant/) 1.1.40 > 
+
 
 ### Ruby gems
-- [ruby-tokyotyrant](http://github.com/actsasflinn/ruby-tokyotyrant)
-- [Sinatra](http://www.sinatrarb.com/) 
-- json (sudo gem install json)
+- [ruby-tokyotyrant](http://github.com/actsasflinn/ruby-tokyotyrant) 0.4 > 
+- [Sinatra](http://www.sinatrarb.com/)  0.9.4 > 
+- json (sudo gem install json) 1.1.9 >
 
 ## How to setup
 
