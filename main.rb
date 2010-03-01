@@ -4,9 +4,12 @@ require 'json'
 require 'tokyo_tyrant'
 require 'erb'
 
-  
-Db = TokyoTyrant::DB.new('127.0.0.1', 1978)
-   
+CONFIG = YAML.load_file('./config/config.yml')
+HOST = CONFIG[:host]
+PORT = CONFIG[:port]
+Db = TokyoTyrant::DB.new(HOST, PORT)
+TABLE = Db.stat.grep(/path/).first.match(/\t(.*)\n/)[1]
+TYPE = Db.stat.grep(/type/).first.match(/\t(.*)\n/)[1]
  
 get '/' do
   @results = get_all
