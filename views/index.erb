@@ -53,6 +53,7 @@
       <p class="mast mast_first"></p></p>
       <p class="mast">
       </p>
+      Example: {"1":"number_1","2":"number_2","3":"number_3","4":"number_4","5":"number_5"}
       <div id="inputcontainer">
         <textarea name="values" id="text" rows="3"><%= @results %></textarea>
       </div>
@@ -71,6 +72,12 @@
        <input type="submit" id="submit" value="Destroy"/> 
       </div>
    </form>
+   <form method="post" action="/destroy_all">
+     <div>
+       <input type="submit" id="submit" value="Destroy All"/> 
+      </div>
+   </form>
+   
    <hr />
    <a name="_output" class="noa"></a>
    <div id="stats" class="stats"></div>

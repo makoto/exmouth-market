@@ -35,6 +35,12 @@ post "/destroy" do
   @results = get_all
   redirect '/'
 end
+
+post "/destroy_all" do
+  Db.vanish
+  @results = get_all
+  redirect '/'
+end
  
 # get "/:key" do
 #   @result = JSON.generate(Db.get(params[:key]))
