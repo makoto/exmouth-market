@@ -12,7 +12,7 @@ TABLE = Db.stat.grep(/path/).first.match(/\t(.*)\n/)[1]
 TYPE = Db.stat.grep(/type/).first.match(/\t(.*)\n/)[1]
  
 get '/' do
-  @results = get_all
+  @results = get_all 
   p @results
   erb :index
 end
@@ -48,5 +48,5 @@ end
 # end
 
 def get_all
-  JSON.generate(Db.mget(0..(Db.size - 1)))
+  JSON.generate(Db.mget(0..(Db.size - 1)) || {}) 
 end
