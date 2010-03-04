@@ -7,7 +7,15 @@ require 'erb'
 CONFIG = YAML.load_file('./config/config.yml')
 HOST = CONFIG[:host]
 PORT = CONFIG[:port]
-Db = TokyoTyrant::DB.new(HOST, PORT)
+TYPE = CONFIG[:type]
+if TYPE == "table"
+  TTAdapter = TokyoTyrant::Table
+elsif TYPE == "hash"
+  TTAdapter = TokyoTyrant::DB
+else
+  raise "Config is wrong"
+end
+Db = TTAdapter.new(HOST, PORT)
 TABLE = Db.stat.grep(/path/).first.match(/\t(.*)\n/)[1]
 TYPE = Db.stat.grep(/type/).first.match(/\t(.*)\n/)[1]
  
@@ -23,6 +31,7 @@ get '/stat' do
 end
  
 post '/' do
+  # p TTAdapter.inspect
   values = JSON.parse(params[:values])
   Db.mput(values)
   @results = get_all
